@@ -23,6 +23,136 @@ To see the bot in action, watch the video below:
 - **Google Calendar Integration**: Consultation details are saved to Google Calendar, and a meeting is scheduled using **Google Meet** for phone or video calls.
 - **Fallback and Error Handling**: If the bot doesn't understand something, it provides friendly prompts to help users.
 
+## Chatbot Application Architecture
+
+```mermaid
+graph TD;
+    A[User Interface Layer] -->|Web/Mobile App| B[Chat Interface]
+    B --> C[Chatbot Engine]
+    C --> D[NLP Service]
+    C --> E[Conversational Logic]
+    D --> F[Intent Recognition]
+    E --> G[Flow Management]
+    E --> H[State Management]
+    
+    C --> I[Backend Services]
+  
+    
+    %% Styling for nodes
+    style A fill:#90CAF9,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style B fill:#90CAF9,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style C fill:#81C784,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style D fill:#81C784,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style E fill:#FFB74D,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style F fill:#FFB74D,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style G fill:#FFB74D,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style H fill:#9575CD,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style I fill:#F06292,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+```
+
+## Chatbot Application Architecture
+
+```mermaid
+graph TD;
+
+    C[Chatbot Engine] --> I[Backend Services]
+    I --> J[Business Logic Layer]
+    I --> K[Data Management]
+    J --> L[Microservices Architecture]
+    J --> M[API Gateway]
+    K --> N[Relational Database]
+    K --> O[NoSQL Database]
+    K --> P[Data Pipelines]
+    
+    I --> Q[Integration Layer]
+    Q --> R[Calendar Integration]
+    Q --> S[CRM Integration]
+    Q --> T[AI and ML Services]
+    T --> U[Machine Learning Models]
+    T --> V[Generative AI Models]
+    
+    I --> W[Security and Compliance]
+    W --> X[Authentication and Authorization]
+    W --> Y[Data Security]
+    X --> Z[OAuth 2.0 / OpenID Connect]
+    X --> AA[RBAC]
+    Y --> AB[Encryption]
+    Y --> AC[Compliance]
+    
+    I --> AD[Deployment and Infrastructure]
+    AD --> AE[Cloud Provider]
+    AD --> AF[Containerization]
+    AE --> AG[AWS / Azure / Google Cloud]
+    AF --> AH[Docker and Kubernetes]
+    
+    I --> AI[CI/CD Pipeline]
+    AI --> AJ[Continuous Integration/Continuous Deployment]
+    
+    I --> AK[Monitoring and Analytics]
+    AK --> AL[Logging and Monitoring]
+    AK --> AM[User Analytics]
+    AL --> AN[ELK Stack, Prometheus, Grafana]
+    AM --> AO[Google Analytics, Mixpanel]
+    
+    I --> AP[Feedback and Iteration]
+    AP --> AQ[User Feedback Loop]
+    AQ --> AR[Feedback Collection]
+    AQ --> AS[Iterative Improvement]
+
+    
+    %% Styling for nodes
+    style A fill:#90CAF9,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style B fill:#90CAF9,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style C fill:#81C784,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style D fill:#81C784,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style E fill:#FFB74D,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style F fill:#FFB74D,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style G fill:#FFB74D,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style H fill:#9575CD,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style I fill:#F06292,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style J fill:#A1887F,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style K fill:#A1887F,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style L fill:#A1887F,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style M fill:#A1887F,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style N fill:#EF5350,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style O fill:#EF5350,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style P fill:#EF5350,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style Q fill:#7986CB,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style R fill:#7986CB,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style S fill:#7986CB,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style T fill:#FFEB3B,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style U fill:#FFEB3B,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style V fill:#FFEB3B,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style W fill:#FF7043,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style X fill:#FF7043,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style Y fill:#FF7043,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style Z fill:#FF7043,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AA fill:#FF7043,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AB fill:#FF7043,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AC fill:#FF7043,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AD fill:#673AB7,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AE fill:#673AB7,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AF fill:#673AB7,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AG fill:#673AB7,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AH fill:#673AB7,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AI fill:#FF5722,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AJ fill:#FF5722,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AK fill:#2196F3,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AL fill:#2196F3,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AM fill:#2196F3,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AN fill:#2196F3,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AO fill:#2196F3,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AP fill:#4CAF50,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AQ fill:#4CAF50,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AR fill:#4CAF50,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+    style AS fill:#4CAF50,stroke:#000000,stroke-width:1px,color:black,font-size:16px;
+ 
+```
+
+
+
+
+
 ## Installation & Setup
 
 
